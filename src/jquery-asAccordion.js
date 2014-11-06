@@ -54,7 +54,6 @@
         this.initialIndex = this.options.initialIndex;
         this.initialized = false;
         this.disabled = false;
-        this.actived = false;
         this.current = null;
 
         this.classes = {
@@ -117,13 +116,12 @@
             this.set(this.initialIndex);
             this.current = this.initialIndex;
 
+            this.initialized = true;
+
             this.responsive.init(this);
             $(window).on('resize', this._throttle(function(){
                 self.responsive.init(self);
             }, 250));
-
-
-            this.initialized = true;
 
             this._trigger('ready');
         },
@@ -147,16 +145,18 @@
 
         responsive: {
             init: function(self) {
-                if ($('html, body').outerWidth() <= self.options.mobile_breakpoint) {
+                if ($('html, body').outerWidth() <= self.options.mobile_breakpoint && !this.responsive) {
                     if (self.options.direction === 'vertical') {
                         return false;
                     }
+                    this.responsive = true;
 
                     this.resize(self);
                 }else {
                     if (typeof self.default_direction === 'undefined' || self.default_direction === 'vertical') {
                         return false;
                     }
+                    this.responsive = false;
 
                     this.resize(self);
                 }
@@ -179,22 +179,34 @@
                 self.$element.addClass(self.classes.direction);
                 
                 style[self.animateProperty] = self.distance;
-                self.$panel.css(style);
+                self.$panel.css(style).removeClass(self.classes.active);
 
-                if (typeof self.current !== 'undefined') {
+                if (self.current.length >= 0 || self.current >= 0) {
                     var index = self.current;
-                    self.current = null;
+                    self.current = self.current.length >= 0 ? [] : null;
                     self.set(index);
                 }
             }
         },
 
         set: function(index) {
+            if ($.isArray(index)) {
+                for(var key in index) {
+                    this.set(index[key]);
+                }
+                return;
+            }
+
+            if (index >= this.size || index < 0) {
+                return;
+            }
+
             var self = this,
                 $panel = this.$panel.eq(index),
                 $oldPanel = this.$element.find('.' + this.classes.active),
                 distance,
                 duration,
+                current = false,
                 style = {},
                 old_style = {};
 
@@ -211,29 +223,44 @@
             }
             duration = Math.ceil(duration);
 
-            if (index === this.current) {
-                this.current = null;
+            if ($panel.hasClass(this.classes.active)) {
                 distance = this.distance;
                 $panel.removeClass(this.classes.active);
-            }else {
-                if (index >= this.size) {
-                    index = this.size - 1;
-                }else if (index < 0) {
-                    index = 0;
-                }
 
+                if (this.options.multiple) {
+                    var number;
+                    for (var key in this.current) {
+                        if (this.current[key] == index) {
+                            number = key;
+                        }else {
+                            continue;
+                        }
+                        this.current.splice(key, 1);
+                    }
+                } else {
+                    this.current = null;
+                }
+            }else {
                 if (this.options.direction === 'vertical') {
                     distance = $panel.find('.' + this.namespace + '__expander').outerHeight() + this.distance;
                 } else {
                     distance = $panel.find('.' + this.namespace + '__expander').outerWidth() + this.distance;
                 }
 
-                this.current = index;
+                if (this.options.multiple && $.isArray(this.current)) {
+                    this.current.push(index);
+                } else {
+                    this.current = index;
+                }
 
-                old_style[this.animateProperty] = this.distance;  // used to remove the original distance
-                this.animate($oldPanel, old_style, duration, this.options.easing, moveEnd);
+                if (this.options.multiple) {
+                    $panel.addClass(this.classes.active);
+                } else {
+                    old_style[this.animateProperty] = this.distance;  // used to remove the original distance
+                    this.animate($oldPanel, old_style, duration, this.options.easing, moveEnd);
 
-                $panel.addClass(this.classes.active).siblings().removeClass(this.classes.active);
+                    $panel.addClass(this.classes.active).siblings().removeClass(this.classes.active);
+                }
             }
 
             style[this.animateProperty] = distance;
@@ -341,7 +368,8 @@
         easing: 'ease-in-out',
         speed: 500,
         direction: 'vertical',
-        event: 'click'
+        event: 'click',
+        multiple: false
     };
 
     $.fn[pluginName] = function(options) {
