@@ -1,37 +1,125 @@
 {
   "name": "jquery-asAccordion",
   "title": "jQuery asAccordion",
-  "description": "a jquery plugin",
-  "version": "0.1.0",
+  "description": "A jquery plugin that do amazing things.",
+  "version": "0.2.0",
   "homepage": "https://github.com/amazingSurge/jquery-asAccordion",
   "author": {
     "name": "amazingSurge",
-    "email": "amazingSurge@yahoo.com",
+    "email": "amazingSurge@gmail.com",
     "url": "amazingSurge.com"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:amazingSurge/jquery-asAccordion.git"
   },
+  "keywords": [
+    "jquery",
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "ui",
+    "es6",
+    "Accordion"
+  ],
   "bugs": "https://github.com/amazingSurge/jquery-asAccordion/issues",
   "licenses": [
     {
-      "type": "GPL",
-      "url": "https://github.com/amazingSurge/jquery-asAccordion/blob/master/LICENSE-GPL"
+      "type": "LGPL-3.0",
+      "url": "https://github.com/amazingSurge/jquery-asAccordion/blob/master/LICENSE"
     }
   ],
-  "devDependencies": {
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-concat": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-contrib-clean": "*",
-    "grunt-jsbeautifier": "*",
-    "grunt-text-replace": "*",
-    "grunt-autoprefixer": "*",
-    "grunt": "*",
-    "grunt-contrib-less": "*",
-    "load-grunt-tasks": "*"
+  "license": "LGPL-3.0",
+  "main": "dist/jquery-asAccordion.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "prestart": "npm install",
+    "start": "gulp serve",
+    "build": "npm run prestart && gulp build",
+    "deploy": "gulp deploy",
+    "deploy:prepare": "gulp deploy:prepare",
+    "release": "gulp release",
+    "test": "gulp test"
   },
-  "keywords": []
+  "devDependencies": {
+    "argv": "*",
+    "assets-manager": "*",
+    "babel-core": "*",
+    "babel-eslint": "*",
+    "babel-istanbul": "*",
+    "babel-plugin-transform-es2015-modules-umd": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-es2015-rollup": "*",
+    "babelrc-rollup": "*",
+    "browser-sync": "*",
+    "chai": "*",
+    "del": "*",
+    "esformatter": "*",
+    "graceful-fs": "*",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "*",
+    "gulp-babel": "*",
+    "gulp-changed": "*",
+    "gulp-csscomb": "*",
+    "gulp-csslint": "*",
+    "gulp-cssnano": "*",
+    "gulp-eslint": "*",
+    "gulp-extname": "*",
+    "gulp-filter": "*",
+    "gulp-header": "*",
+    "gulp-iconfont-css": "*",
+    "gulp-if": "*",
+    "gulp-jshint": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-replace": "*",
+    "gulp-rollup": "*",
+    "gulp-sass": "*",
+    "gulp-sass-unicode": "*",
+    "gulp-scss-lint": "*",
+    "gulp-size": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-stylelint": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "gulp-zip": "*",
+    "inquirer": "*",
+    "jshint": "*",
+    "karma": "*",
+    "karma-babel-preprocessor": "*",
+    "karma-chrome-launcher": "*",
+    "karma-commonjs": "*",
+    "karma-coverage": "*",
+    "karma-firefox-launcher": "*",
+    "karma-mocha": "*",
+    "karma-mocha-reporter": "*",
+    "karma-phantomjs-launcher": "*",
+    "karma-rollup-plugin": "*",
+    "karma-sinon-chai": "*",
+    "merge-stream": "*",
+    "mkdirp": "*",
+    "mocha": "*",
+    "node-notifier": "*",
+    "normalize.css": "^4.2.0",
+    "path-exists": "*",
+    "phantomjs-prebuilt": "*",
+    "release-it": "*",
+    "rollup-plugin-babel": "*",
+    "rollup-plugin-istanbul": "*",
+    "sinon": "*",
+    "sinon-chai": "*",
+    "stylelint-config-bootstrap": "*",
+    "stylelint-scss": "*",
+    "through2": "*"
+  },
+  "engines": {
+    "node": ">= 6.2.2",
+    "npm": ">= 3"
+  },
+  "dependencies": {
+    "jquery": ">=2.2.0"
+  }
 }
