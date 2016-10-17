@@ -1,6 +1,6 @@
 # [jQuery asAccordion](https://github.com/amazingSurge/jquery-asAccordion) ![bower][bower-image] [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url] [![prs-welcome]](#contributing)
 
-> A jquery plugin that do amazing things.
+> A jquery plugin that convent content into accordion.
 
 ## Table of contents
 - [Main files](#main-files)
@@ -44,6 +44,11 @@ bower install jquery-asAccordion --save
 #### Install From Npm
 ```sh
 npm install jquery-asAccordion --save
+```
+
+#### Install From Yarn
+```sh
+yarn add jquery-asAccordion
 ```
 
 #### Build From Source
@@ -113,11 +118,11 @@ You can also save the instances to variable for further use.
 
 ```javascript
 // call directly
-$().asAccordion('destory');
+$().asAccordion('destroy');
 
 // or
 var api = $().data('asAccordion');
-api.destory();
+api.destroy();
 ```
 
 #### enable()
@@ -152,8 +157,8 @@ Event   | Description
 ------- | -----------
 init    | Fires when the instance is setup for the first time.
 ready   | Fires when the instance is ready for API use.
-enable  | This event is fired immediately when the `enable` instance method has been called.
-disable | This event is fired immediately when the `disable` instance method has been called.
+enable  | Fired when the `enable` instance method has been called.
+disable | Fired when the `disable` instance method has been called.
 destroy | Fires when an instance is destroyed. 
 
 ## No conflict

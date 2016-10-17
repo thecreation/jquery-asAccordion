@@ -1,5 +1,5 @@
 /**
-* jQuery asAccordion v0.2.0
+* jQuery asAccordion v0.2.1
 * https://github.com/amazingSurge/jquery-asAccordion
 *
 * Copyright (c) amazingSurge
@@ -487,13 +487,11 @@
       }, {
         key: '_trigger',
         value: function _trigger(eventType) {
-          var _ref;
-
           for (var _len2 = arguments.length, params = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
             params[_key2 - 1] = arguments[_key2];
           }
 
-          var data = (_ref = [this]).concat.apply(_ref, params);
+          var data = [this].concat(params);
 
           // event
           this.$element.trigger(NAMESPACE$1 + '::' + eventType, data);
@@ -508,9 +506,7 @@
           var onFunction = 'on' + eventType;
 
           if (typeof this.options[onFunction] === 'function') {
-            var _options$onFunction;
-
-            (_options$onFunction = this.options[onFunction]).apply.apply(_options$onFunction, [this].concat(params));
+            this.options[onFunction].apply(this, params);
           }
         }
       }, {
@@ -528,11 +524,11 @@
           this._trigger('disable');
         }
       }, {
-        key: 'destory',
-        value: function destory() {
+        key: 'destroy',
+        value: function destroy() {
           this.$element.data(NAMESPACE$1, null);
           this.$element.remove();
-          this._trigger('destory');
+          this._trigger('destroy');
         }
       }], [{
         key: 'setDefaults',
@@ -545,7 +541,7 @@
     }();
 
     var info = {
-      version: '0.2.0'
+      version: '0.2.1'
     };
 
     var NAMESPACE = 'asAccordion';

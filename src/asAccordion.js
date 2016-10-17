@@ -243,7 +243,7 @@ class asAccordion {
   }
 
   _trigger(eventType, ...params) {
-    let data = [this].concat(...params);
+    let data = [this].concat(params);
 
     // event
     this.$element.trigger(`${NAMESPACE}::${eventType}`, data);
@@ -255,7 +255,7 @@ class asAccordion {
     let onFunction = `on${eventType}`;
 
     if (typeof this.options[onFunction] === 'function') {
-      this.options[onFunction].apply(this, ...params);
+      this.options[onFunction].apply(this, params);
     }
   }
 
@@ -271,10 +271,10 @@ class asAccordion {
     this._trigger('disable');
   }
 
-  destory() {
+  destroy() {
     this.$element.data(NAMESPACE, null);
     this.$element.remove();
-    this._trigger('destory');
+    this._trigger('destroy');
   }
 
   static setDefaults(options) {

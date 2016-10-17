@@ -1,8 +1,8 @@
 {
   "name": "jquery-asAccordion",
   "title": "jQuery asAccordion",
-  "description": "A jquery plugin that do amazing things.",
-  "version": "0.2.0",
+  "description": "A jquery plugin that convent content into accordion.",
+  "version": "0.2.1",
   "homepage": "https://github.com/amazingSurge/jquery-asAccordion",
   "author": {
     "name": "amazingSurge",
@@ -19,7 +19,7 @@
     "ecosystem:jquery",
     "ui",
     "es6",
-    "Accordion"
+    "accordion"
   ],
   "bugs": "https://github.com/amazingSurge/jquery-asAccordion/issues",
   "licenses": [

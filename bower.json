@@ -1,7 +1,7 @@
 {
   "name": "jquery-asAccordion",
-  "version": "0.2.0",
-  "description": "A jquery plugin that do amazing things.",
+  "version": "0.2.1",
+  "description": "A jquery plugin that convent content into accordion.",
   "main": "dist/jquery-asAccordion.js",
   "copyright": "amazingSurge",
   "license": "LGPL-3.0",

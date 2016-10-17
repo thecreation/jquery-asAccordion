@@ -1,5 +1,5 @@
 /**
-* jQuery asAccordion v0.2.0
+* jQuery asAccordion v0.2.1
 * https://github.com/amazingSurge/jquery-asAccordion
 *
 * Copyright (c) amazingSurge
@@ -333,7 +333,7 @@ class asAccordion {
   }
 
   _trigger(eventType, ...params) {
-    let data = [this].concat(...params);
+    let data = [this].concat(params);
 
     // event
     this.$element.trigger(`${NAMESPACE$1}::${eventType}`, data);
@@ -345,7 +345,7 @@ class asAccordion {
     let onFunction = `on${eventType}`;
 
     if (typeof this.options[onFunction] === 'function') {
-      this.options[onFunction].apply(this, ...params);
+      this.options[onFunction].apply(this, params);
     }
   }
 
@@ -361,10 +361,10 @@ class asAccordion {
     this._trigger('disable');
   }
 
-  destory() {
+  destroy() {
     this.$element.data(NAMESPACE$1, null);
     this.$element.remove();
-    this._trigger('destory');
+    this._trigger('destroy');
   }
 
   static setDefaults(options) {
@@ -373,7 +373,7 @@ class asAccordion {
 }
 
 var info = {
-  version:'0.2.0'
+  version:'0.2.1'
 };
 
 const NAMESPACE = 'asAccordion';
