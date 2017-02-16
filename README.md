@@ -87,7 +87,7 @@ All you need to do is call the plugin on the element:
 
 ```javascript
 jQuery(function($) {
-  $('.example').asAccordion(); 
+  $('.example').asAccordion();
 });
 ```
 
@@ -144,7 +144,7 @@ $().asAccordion('destroy');
 ```
 
 ## Events
-`jquery-asAccordion` provides custom events for the plugin’s unique actions. 
+`jquery-asAccordion` provides custom events for the plugin’s unique actions.
 
 ```javascript
 $('.the-element').on('asAccordion::ready', function (e) {
@@ -159,7 +159,7 @@ init    | Fires when the instance is setup for the first time.
 ready   | Fires when the instance is ready for API use.
 enable  | Fired when the `enable` instance method has been called.
 disable | Fired when the `disable` instance method has been called.
-destroy | Fires when an instance is destroyed. 
+destroy | Fires when an instance is destroyed.
 
 ## No conflict
 If you have to use other plugin with the same namespace, just call the `$.asAccordion.noConflict` method to revert to it.
@@ -177,7 +177,7 @@ If you have to use other plugin with the same namespace, just call the `$.asAcco
 
 Tested on all major browsers.
 
-| <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/safari/safari_32x32.png" alt="Safari"> | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/chrome/chrome_32x32.png" alt="Chrome"> | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox_32x32.png" alt="Firefox"> | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/edge/edge_32x32.png" alt="Edge"> | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer/internet-explorer_32x32.png" alt="IE"> | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera_32x32.png" alt="Opera"> |
+| <img src="https://github.com/alrra/browser-logos/blob/master/src/safari/safari_32x32.png" alt="Safari"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/chrome/chrome_32x32.png" alt="Chrome"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/firefox/firefox_32x32.png" alt="Firefox"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/edge/edge_32x32.png" alt="Edge"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/internet-explorer/internet-explorer_32x32.png" alt="IE"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/opera/opera_32x32.png" alt="Opera"> |
 |:--:|:--:|:--:|:--:|:--:|:--:|
 | Latest ✓ | Latest ✓ | Latest ✓ | Latest ✓ | 9-11 ✓ | Latest ✓ |
 
