@@ -177,7 +177,7 @@ If you have to use other plugin with the same namespace, just call the `$.asAcco
 
 Tested on all major browsers.
 
-| <img src="https://github.com/alrra/browser-logos/blob/master/src/safari/safari_32x32.png" alt="Safari"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/chrome/chrome_32x32.png" alt="Chrome"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/firefox/firefox_32x32.png" alt="Firefox"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/edge/edge_32x32.png" alt="Edge"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/internet-explorer/internet-explorer_32x32.png" alt="IE"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/opera/opera_32x32.png" alt="Opera"> |
+| <img src="https://github.com/alrra/browser-logos/blob/master/src/safari/safari_32x32.png" alt="Safari"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/chrome/chrome_32x32.png" alt="Chrome"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/firefox/firefox_32x32.png" alt="Firefox"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/edge/edge_32x32.png" alt="Edge"> | <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/40.0.0/archive/internet-explorer_9-11/internet-explorer_9-11_32x32.png" alt="IE"> | <img src="https://github.com/alrra/browser-logos/blob/master/src/opera/opera_32x32.png" alt="Opera"> |
 |:--:|:--:|:--:|:--:|:--:|:--:|
 | Latest ✓ | Latest ✓ | Latest ✓ | Latest ✓ | 9-11 ✓ | Latest ✓ |
 
