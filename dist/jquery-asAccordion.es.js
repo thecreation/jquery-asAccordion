@@ -1,5 +1,5 @@
 /**
-* jQuery asAccordion v0.2.1
+* jQuery asAccordion v0.2.2
 * https://github.com/amazingSurge/jquery-asAccordion
 *
 * Copyright (c) amazingSurge
@@ -254,10 +254,9 @@ class asAccordion {
         $panel.removeClass(this.classes.active);
 
         if (this.options.multiple) {
-          let number;
           for (var key in this.current) {
             if (this.current[key] === index) {
-              number = key;
+              
             } else {
               continue;
             }
@@ -373,7 +372,7 @@ class asAccordion {
 }
 
 var info = {
-  version:'0.2.1'
+  version:'0.2.2'
 };
 
 const NAMESPACE = 'asAccordion';
